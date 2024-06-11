@@ -1,0 +1,133 @@
+h1,
+p {
+    margin: 0;
+    padding: 0;
+}
+.movie-list-wrapper {
+    margin: 1.6em auto 0;
+    padding: 12.5em 1em 0;
+    place-content: center;
+    gap: 2em;
+}
+
+.movie-list-wrapper,
+.movie-list {
+    display: grid; 
+}
+.movie-list {
+    grid-template-columns: auto 1fr;
+    gap: 2em;
+    box-sizing: border-box;
+    border-bottom: 0.1em solid #2C2C2C;
+    max-width: 900px;
+    letter-spacing: .5px;
+    padding-bottom: 1.89em;
+}
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.movie-details-heading {
+    gap: .5em;
+    font-weight: 500;
+}
+
+.movie-details-body {
+    gap: 1em;
+}
+.movie-details-body label {
+    margin-left: .5em;
+}
+.flex {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    gap: .5em;
+}
+.watchlist-btn {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    gap: 1em;
+    background: transparent;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+.add-status:hover,
+.add-status:focus {
+    color: #19ad19;
+}
+.remove-status:hover {
+    color: #b54747;
+}
+.small-text p {
+    font-size: 1.5rem;
+}
+.home-btn {
+    background: transparent;
+    color: #FFFFFF;
+    border: none;
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-style: italic;
+    
+}
+.hide-text {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+}
+.readmore-btn {
+    background: none;
+    color: #FFFFFF;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+.readmore-btn:hover,
+.readmore-btn:focus {
+    color: #d7ebd7;
+}
+.readmore-visible {
+    display: block;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 2001px) {
+    .movie-poster {
+        width: 120px;
+    }
+}
+@media (max-width: 2000px ) {
+    .movie-poster {
+        width: 120px;
+    }
+}
+@media (max-width: 600px) {
+    .movie-list {
+        gap: 0.5em;
+    }
+    .movie-poster {
+        min-width: 99px;
+        min-height: 147px;
+        object-fit: cover;
+    }
+
+    .movie-details {
+        min-width: 200px;
+        height: 200px;
+        font-size: 12px;
+    }
+    
+    .movie-details-heading:nth-child(1) {
+        font-size: 9px;
+    }
+}

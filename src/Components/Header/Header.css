@@ -1,0 +1,38 @@
+.header-section {
+    display: flex; 
+    flex-direction: column;
+} 
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url('images/header-logo.png');
+    background-color: #0E0E0E;
+    width: 100%;
+    height: 200px;
+    position: fixed;
+}
+.header h1 {
+    color: #FFFFFF;
+    font-size: 2.69rem;
+}
+.header button {
+    background: transparent;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+.header button:hover,
+.header button:focus {
+    color: #c2c2c2;
+}
+.movie-logo {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    opacity: 0.6;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}

@@ -1,0 +1,10 @@
+.small-text {
+    color: #787878;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    margin-top: 18rem;
+}
+.small-text span {
+    display: block;
+}
