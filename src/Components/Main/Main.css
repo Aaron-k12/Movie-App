@@ -9,7 +9,6 @@ p {
     place-content: center;
     gap: 2em;
 }
-
 .movie-list-wrapper,
 .movie-list {
     display: grid; 
@@ -32,7 +31,6 @@ p {
     gap: .5em;
     font-weight: 500;
 }
-
 .movie-details-body {
     gap: 1em;
 }

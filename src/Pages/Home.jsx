@@ -17,7 +17,7 @@ const Home = () => {
   });
 
   //API key
-  const apikey = JSON.stringify(import.meta.env.VITE_REACT_API_KEY)
+  const apikey = import.meta.env.VITE_REACT_API_KEY
 
   // stored movies
   const addMovieToWatchlist = (movie) => {
