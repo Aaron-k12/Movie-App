@@ -5,7 +5,6 @@
     justify-content: center;
     max-width: -moz-fit-content;
     max-width: fit-content;
-    margin-top: 12.5rem
 }
 form {
     margin: 0 auto;
@@ -17,7 +16,7 @@ form {
     display: flex;
     align-items: center;
     position: fixed; 
-   
+    top: 23%;
     left: 50%;
     transform: translate(-50%, -50%); 
 }
