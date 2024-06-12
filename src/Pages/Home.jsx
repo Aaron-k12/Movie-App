@@ -4,6 +4,7 @@ import SearchBar from '../Components/SearchBar/SearchBar';
 import Main from '../Components/Main/Main';
 import NotFound from '../Components/NotFound/NotFound';
 import Watchlist from './Watchlist';
+import { ClipLoader } from 'react-spinners';
 
 const Home = () => {
   const [isHome, setIsHome] = React.useState(true);
@@ -12,12 +13,13 @@ const Home = () => {
   const [allMovieData, setAllMovieData] = React.useState([]);
   const [notFound, setNotFound] = React.useState(false);
   const [renderWatchlist, setRenderWatchlist] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
   const [storedMovies, setStoredMovies] = React.useState(() => {
     return JSON.parse(localStorage.getItem('movies')) || [];
   });
 
   //API key
-  const apikey = import.meta.env.VITE_REACT_API_KEY
+  const apikey = import.meta.env.VITE_REACT_API_KEY;
 
   // stored movies
   const addMovieToWatchlist = (movie) => {
@@ -61,8 +63,10 @@ const Home = () => {
           const result = await response.json();
           setMovieData(result.Search.map((item) => item.Title));
           setNotFound(false);
+          setLoading(false);
         } catch (error) {
           console.log(error);
+          setLoading(false);
           setNotFound(true);
         }
       }
@@ -113,6 +117,16 @@ const Home = () => {
     setIsHome((prev) => !prev);
   };
 
+  const override = {
+    position: 'fixed',
+    height: '100px',
+    width: '100px',
+    top: '50%',
+    left: '50%',
+    marginLeft: '-50px',
+    marginTop: '50px',
+  };
+
   return (
     <>
       <Header
@@ -120,7 +134,9 @@ const Home = () => {
         setIsHome={setIsHome}
         isHome={isHome}
       />
-      {!renderWatchlist && <SearchBar setMovieName={setMovieName} />}
+      {!renderWatchlist && (
+        <SearchBar setMovieName={setMovieName} setLoading={setLoading} />
+      )}
       {renderWatchlist ? (
         <Watchlist
           movies={storedMovies}
@@ -129,6 +145,15 @@ const Home = () => {
         />
       ) : (
         <>
+          {
+            <ClipLoader
+              size={150}
+              loading={loading}
+              color={'yellow'}
+              aria-label="Loading Spinner"
+              cssOverride={override}
+            />
+          }
           {notFound ? (
             <NotFound />
           ) : (

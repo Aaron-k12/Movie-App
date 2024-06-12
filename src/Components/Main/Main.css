@@ -75,6 +75,7 @@ p {
     font-style: italic;
     
 }
+
 .hide-text {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -118,14 +119,16 @@ p {
         min-height: 147px;
         object-fit: cover;
     }
-
     .movie-details {
         min-width: 200px;
         height: 200px;
         font-size: 12px;
     }
-    
     .movie-details-heading:nth-child(1) {
         font-size: 9px;
+    }
+    .movie-plot-section {
+        max-height: 600px;
+        overflow: hidden;
     }
 }

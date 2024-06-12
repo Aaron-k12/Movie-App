@@ -2,11 +2,12 @@ import React from 'react';
 import './SearchBar.css';
 import { FaSearch } from 'react-icons/fa';
 
-const SearchBar = ({ setMovieName }) => {
+const SearchBar = ({ setMovieName, setLoading }) => {
   const [movieData, setMovieData] = React.useState('');
 
   const handleClick = (e) => {
     e.preventDefault();
+    setLoading(true)
     setMovieName(movieData);
     setMovieData('');
   };

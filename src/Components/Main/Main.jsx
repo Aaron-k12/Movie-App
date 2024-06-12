@@ -87,23 +87,25 @@ const Main = ({ movies, handleClick }) => {
                   )}
                 </button>
               </div>
-              <p
-                className={`movie-details-plot ${
-                  !isExpanded ? 'hide-text' : null
-                }`}
-                id={`plot-${item.imdbID}`}
-                ref={(el) => (refs.current[item.imdbID] = el)}
-              >
-                {item.Plot}
-              </p>
-              {showReadMoreBtn[item.imdbID] ? (
-                <button
-                  className="readmore-btn"
-                  onClick={() => handleToggle(item.imdbID)}
+              <div className="movie-plot-section">
+                <p
+                  className={`movie-details-plot ${
+                    !isExpanded ? 'hide-text max-lines' : null
+                  }`}
+                  id={`plot-${item.imdbID}`}
+                  ref={(el) => (refs.current[item.imdbID] = el)}
                 >
-                  {isExpanded ? 'read less' : 'read more'}...
-                </button>
-              ) : null}
+                  {item.Plot}
+                </p>
+                {showReadMoreBtn[item.imdbID] ? (
+                  <button
+                    className="readmore-btn"
+                    onClick={() => handleToggle(item.imdbID)}
+                  >
+                    {isExpanded ? 'read less' : 'read more'}...
+                  </button>
+                ) : null}
+              </div>
             </div>
           </div>
         );
